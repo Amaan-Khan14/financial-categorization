@@ -117,7 +117,8 @@ function Dashboard() {
           <h3>Model Performance Metrics</h3>
           <div className="performance-grid">
             {performanceMetrics.map((metric, index) => {
-              const isPercentage = typeof metric.value === "string" && metric.value.includes("%");
+              const isPercentage =
+                typeof metric.value === "string" && metric.value.includes("%");
               const isCategory = metric.label === "Categories Supported";
 
               return (
@@ -125,7 +126,9 @@ function Dashboard() {
                   <div className="performance-label">{metric.label}</div>
                   <div
                     className="performance-value"
-                    style={{ color: getPerformanceColor(metric.value, !isCategory) }}
+                    style={{
+                      color: getPerformanceColor(metric.value, !isCategory),
+                    }}
                   >
                     {metric.value}
                   </div>
@@ -135,7 +138,10 @@ function Dashboard() {
                         className="performance-bar-fill"
                         style={{
                           width: isPercentage ? metric.value : "100%",
-                          backgroundColor: getPerformanceColor(metric.value, !isCategory),
+                          backgroundColor: getPerformanceColor(
+                            metric.value,
+                            !isCategory,
+                          ),
                         }}
                       />
                     </div>
@@ -180,22 +186,41 @@ function Dashboard() {
         <h3>Key Features</h3>
         <div className="features-grid">
           <div className="feature-card card">
+            <div className="feature-badge">AI POWERED</div>
             <h4>Multi-stage Ensemble</h4>
             <p>
-              Advanced classification with 96.15% F1-score across all categories
+              Advanced classification with <strong>96.15% F1-score</strong>{" "}
+              across all categories
             </p>
           </div>
           <div className="feature-card card">
-            <h4>150+ Brands Supported</h4>
-            <p>Comprehensive coverage of Indian marketplace brands</p>
+            <div className="feature-badge">EXTENSIVE</div>
+            <h4>150+ Brands</h4>
+            <p>
+              Comprehensive coverage of Indian marketplace and fintech brands
+            </p>
           </div>
           <div className="feature-card card">
-            <h4>Zero Dependencies</h4>
-            <p>No external API calls for real-time predictions</p>
+            <div className="feature-badge">SELF-CONTAINED</div>
+            <h4>Zero External APIs</h4>
+            <p>100% offline inference with no external dependencies</p>
           </div>
           <div className="feature-card card">
+            <div className="feature-badge">TRANSPARENT</div>
             <h4>Full Explainability</h4>
-            <p>Complete feature attribution and prediction insights</p>
+            <p>
+              LIME-based feature attribution with complete prediction insights
+            </p>
+          </div>
+          <div className="feature-card card">
+            <div className="feature-badge">OCR ENABLED</div>
+            <h4>Image Classification</h4>
+            <p>Receipt & invoice scanning with automatic text extraction</p>
+          </div>
+          <div className="feature-card card">
+            <div className="feature-badge">INSIGHTS</div>
+            <h4>Smart Analytics</h4>
+            <p>AI-driven insights, anomaly detection, and spending forecasts</p>
           </div>
         </div>
       </div>

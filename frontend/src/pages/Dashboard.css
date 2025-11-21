@@ -261,39 +261,85 @@
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
 .feature-card {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    border: 2px solid transparent;
+    background: var(--bg-white);
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 80, 158, 0.15);
+    border-color: var(--primary-blue);
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
 }
 
 .feature-icon {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     display: block;
     margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:hover .feature-icon {
+    animation: float 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.feature-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s ease;
+}
+
+.feature-card:hover .feature-badge {
+    box-shadow: 0 4px 12px rgba(0, 80, 158, 0.3);
 }
 
 .feature-card h4 {
-    font-size: 1rem;
+    font-size: 1.125rem;
     margin-bottom: 0.75rem;
     color: var(--text-dark);
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .feature-card p {
     font-size: 0.875rem;
     color: var(--text-gray);
-    line-height: 1.6;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+}
+
+.feature-card strong {
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
 .loading-container {
@@ -311,6 +357,12 @@
     }
 
     .performance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
