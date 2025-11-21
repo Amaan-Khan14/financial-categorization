@@ -1,0 +1,2 @@
+{"feedback_id": "fb_9b0b7800", "timestamp": "2025-11-15T15:20:36.119531Z", "transaction": "Test transaction", "predicted_category": "Shopping", "correct_category": "Groceries", "confidence": 0.85, "user_id": null}
+{"feedback_id": "fb_cd706f3f", "timestamp": "2025-11-15T15:26:41.915088Z", "transaction": "Netflix subscription", "predicted_category": "Entertainment", "correct_category": "Utilities", "confidence": 0.95, "user_id": null}
