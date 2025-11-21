@@ -2,22 +2,14 @@
 Batch processing endpoints
 """
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from fastapi.responses import FileResponse
 from app.models.batch import BatchResponse, BatchTransaction, BatchSummary
 from app.core.model_loader import ModelLoader
 import pandas as pd
 import io
-import uuid
-from pathlib import Path
 import logging
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
-
-# Directory for batch results
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
-BATCH_RESULTS_DIR = PROJECT_ROOT / "backend" / "batch_results"
-BATCH_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def get_model_loader():
@@ -72,6 +64,7 @@ async def process_batch(
         high_conf = 0
         medium_conf = 0
         low_conf = 0
+        category_distribution = {}
 
         logger.info(f"Processing {len(df)} transactions...")
 
@@ -92,10 +85,14 @@ async def process_batch(
                 else:
                     low_conf += 1
 
+                # Track category distribution
+                predicted_category = prediction['predicted_category']
+                category_distribution[predicted_category] = category_distribution.get(predicted_category, 0) + 1
+
                 results.append(BatchTransaction(
                     transaction_id=transaction_id,
                     transaction=transaction,
-                    predicted_category=prediction['predicted_category'],
+                    predicted_category=predicted_category,
                     confidence=confidence
                 ))
 
@@ -103,28 +100,10 @@ async def process_batch(
                 logger.error(f"Error processing transaction {row.get('transaction_id', 'unknown')}: {e}")
                 # Continue processing other transactions
 
-        # Generate job ID
-        job_id = f"batch_{uuid.uuid4().hex[:12]}"
-
-        # Save results to CSV
-        results_df = pd.DataFrame([
-            {
-                'transaction_id': r.transaction_id,
-                'transaction': r.transaction,
-                'predicted_category': r.predicted_category,
-                'confidence': r.confidence
-            }
-            for r in results
-        ])
-
-        output_path = BATCH_RESULTS_DIR / f"{job_id}.csv"
-        results_df.to_csv(output_path, index=False)
-
         logger.info(f"Batch processing complete: {len(results)} transactions processed")
 
         # Create response
         return BatchResponse(
-            job_id=job_id,
             total_transactions=len(results),
             status="completed",
             results=results,
@@ -132,9 +111,9 @@ async def process_batch(
                 processed=len(results),
                 high_confidence=high_conf,
                 medium_confidence=medium_conf,
-                low_confidence=low_conf
-            ),
-            download_url=f"/api/v1/batch/{job_id}/download"
+                low_confidence=low_conf,
+                category_distribution=category_distribution
+            )
         )
 
     except HTTPException:
@@ -142,18 +121,3 @@ async def process_batch(
     except Exception as e:
         logger.error(f"Batch processing error: {e}")
         raise HTTPException(status_code=500, detail=f"Batch processing failed: {str(e)}")
-
-
-@router.get("/{job_id}/download")
-async def download_batch_results(job_id: str):
-    """Download batch processing results as CSV"""
-    file_path = BATCH_RESULTS_DIR / f"{job_id}.csv"
-
-    if not file_path.exists():
-        raise HTTPException(status_code=404, detail="Batch results not found")
-
-    return FileResponse(
-        path=file_path,
-        filename=f"categorized_{job_id}.csv",
-        media_type="text/csv"
-    )
