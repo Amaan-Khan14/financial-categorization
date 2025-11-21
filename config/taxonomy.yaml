@@ -1,0 +1,477 @@
+version: "1.0"
+categories:
+  Food & Dining:
+    keywords:
+      - starbucks
+      - mcdonalds
+      - restaurant
+      - cafe
+      - pizza
+      - burger
+      - kfc
+      - subway
+      - chipotle
+      - dominos
+      - taco bell
+      - wendys
+      - dunkin
+      - panera
+      - coffee
+      - dining
+      - bistro
+      - diner
+      # Indian Food & Dining
+      - zomato
+      - swiggy
+      - swiggy instamart
+      - haldirams
+      - haldiram
+      - bikanervala
+      - moti mahal
+      - punjabi dhaba
+      - saravana bhavan
+      - cafe coffee day
+      - ccd
+      - barista
+      - chaayos
+      - chai point
+      - wow momo
+      - behrouz biryani
+      - faasos
+      - ovenstory
+      - the burger club
+      - oven story
+      - pizza hut india
+      - dominos india
+      - kfc india
+      - burger king india
+      - taco bell india
+      - subway india
+      - fresh menu
+      - freshmenu
+      - box8
+      - lunchbox
+      - biryani blues
+      - rebel foods
+      - irani cafe
+      - udupi
+    aliases:
+      - dining
+      - food
+      - catering
+      - eatery
+    confidence_boost: 0.05
+
+  Groceries:
+    keywords:
+      - walmart
+      - whole foods
+      - trader joes
+      - kroger
+      - safeway
+      - costco
+      - target
+      - aldi
+      - publix
+      - wegmans
+      - supermarket
+      - grocery
+      - market
+      - fresh
+      # Indian Groceries
+      - bigbasket
+      - big basket
+      - grofers
+      - blinkit
+      - jiomart
+      - jio mart
+      - dmart
+      - d mart
+      - dmart ready
+      - more
+      - more megastore
+      - reliance fresh
+      - reliance smart
+      - spencer's
+      - spencers
+      - easyday
+      - nature's basket
+      - natures basket
+      - hypercity
+      - star bazaar
+      - nilgiris
+      - nilgiri's
+      - big bazaar
+      - bigbazaar
+      - metro cash
+      - spar
+      - twenty four seven
+      - 24 seven
+      - super bazar
+      - apna bazaar
+      - sahakari bhandar
+      - zepto
+      - dunzo
+      - instamart
+      - flipkart supermart
+    aliases:
+      - supermarket
+      - grocery
+      - market
+    confidence_boost: 0.03
+
+  Fuel:
+    keywords:
+      - shell
+      - exxon
+      - chevron
+      - bp
+      - mobil
+      - sunoco
+      - marathon
+      - gas station
+      - fuel
+      - petrol
+      - gasoline
+      # Indian Fuel
+      - indian oil
+      - iocl
+      - bharat petroleum
+      - bpcl
+      - hindustan petroleum
+      - hpcl
+      - reliance petrol
+      - reliance petroleum
+      - shell india
+      - essar oil
+      - nayara energy
+      - jio bp
+      - petrol pump
+      - diesel
+      - cng
+      - auto gas
+    aliases:
+      - petrol
+      - fuel
+      - energy
+      - gas
+    confidence_boost: 0.05
+
+  Shopping:
+    keywords:
+      - amazon
+      - ebay
+      - walmart
+      - target
+      - macys
+      - nordstrom
+      - bestbuy
+      - apple store
+      - nike
+      - adidas
+      - zara
+      - h&m
+      - gap
+      - retail
+      - store
+      - shop
+      - mall
+      # Indian Shopping
+      - myntra
+      - flipkart
+      - amazon india
+      - meesho
+      - ajio
+      - snapdeal
+      - shopclues
+      - tata cliq
+      - tatacliq
+      - nykaa
+      - nykaa fashion
+      - lifestyle
+      - lifestyle stores
+      - westside
+      - max fashion
+      - pantaloons
+      - shopper's stop
+      - shoppers stop
+      - central
+      - reliance trends
+      - reliance digital
+      - croma
+      - vijay sales
+      - poorvika
+      - samsung store
+      - mi store
+      - one plus
+      - oneplus store
+      - apple store india
+      - decathlon india
+      - puma
+      - reebok
+      - woodland
+      - bata
+      - liberty
+      - raymond
+      - fabindia
+      - fab india
+      - limeroad
+      - koovs
+      - jabong
+      - paytm mall
+      - udaan
+      - craftsvilla
+      - homeshop18
+      - naaptol
+      - indiamart
+    aliases:
+      - retail
+      - shopping
+      - store
+    confidence_boost: 0.02
+
+  Utilities:
+    keywords:
+      - electric
+      - water
+      - internet
+      - phone
+      - gas company
+      - comcast
+      - verizon
+      - att
+      - utilities
+      - power
+      - energy
+      - telecom
+      - cable
+      # Indian Utilities
+      - airtel
+      - jio
+      - reliance jio
+      - vodafone
+      - vodafone idea
+      - vi
+      - bsnl
+      - mtnl
+      - idea
+      - tata sky
+      - tatasky
+      - dish tv
+      - dishtv
+      - sun direct
+      - airtel digital tv
+      - d2h
+      - tata power
+      - adani power
+      - reliance power
+      - bescom
+      - bses
+      - msedcl
+      - tneb
+      - pspcl
+      - torrent power
+      - cesc
+      - act fibernet
+      - act broadband
+      - hathway
+      - tikona
+      - nextra
+      - you broadband
+      - spectra
+      - den
+      - delhi jal board
+      - mahanagar gas
+      - indraprastha gas
+      - igl
+      - gail
+    aliases:
+      - utilities
+      - bills
+      - services
+    confidence_boost: 0.04
+
+  Entertainment:
+    keywords:
+      - netflix
+      - spotify
+      - hulu
+      - disney
+      - cinema
+      - theater
+      - movie
+      - concert
+      - games
+      - xbox
+      - playstation
+      - steam
+      - entertainment
+      - amusement
+      # Indian Entertainment
+      - hotstar
+      - disney hotstar
+      - disney+ hotstar
+      - amazon prime
+      - prime video india
+      - sony liv
+      - sonyliv
+      - zee5
+      - voot
+      - alt balaji
+      - altbalaji
+      - mx player
+      - eros now
+      - erosnow
+      - jio cinema
+      - jiocinema
+      - sun nxt
+      - hoichoi
+      - aha
+      - bookmyshow
+      - book my show
+      - paytm movies
+      - pvr
+      - pvr cinemas
+      - inox
+      - cinepolis
+      - carnival cinemas
+      - miraj cinemas
+      - satyam cinemas
+      - gaana
+      - wynk music
+      - jiosaavn
+      - jio saavn
+      - hungama
+      - spotify india
+      - youtube music
+      - apple music india
+      - games the shop
+      - gamestheshop
+    aliases:
+      - entertainment
+      - media
+      - streaming
+    confidence_boost: 0.03
+
+  Transportation:
+    keywords:
+      - uber
+      - lyft
+      - transit
+      - parking
+      - metro
+      - bus
+      - train
+      - taxi
+      - subway
+      - transport
+      - rail
+      - fare
+      # Indian Transportation
+      - ola
+      - ola cabs
+      - uber india
+      - rapido
+      - blu smart
+      - blusmart
+      - meru cabs
+      - mega cabs
+      - indian railways
+      - irctc
+      - redbus
+      - red bus
+      - abhibus
+      - mobikwik
+      - paytm bus
+      - delhi metro
+      - dmrc
+      - mumbai metro
+      - bangalore metro
+      - namma metro
+      - kolkata metro
+      - chennai metro
+      - hyderabad metro
+      - kochi metro
+      - best
+      - bmtc
+      - dtc
+      - apsrtc
+      - ksrtc
+      - msrtc
+      - parking
+    aliases:
+      - transport
+      - travel
+      - commute
+    confidence_boost: 0.04
+
+  Health:
+    keywords:
+      - pharmacy
+      - cvs
+      - walgreens
+      - rite aid
+      - doctor
+      - hospital
+      - clinic
+      - medical
+      - health
+      - dental
+      - care
+      - medicine
+      # Indian Health
+      - apollo pharmacy
+      - apollo hospitals
+      - apollo clinic
+      - medplus
+      - med plus
+      - netmeds
+      - pharmeasy
+      - 1mg
+      - onemg
+      - truemeds
+      - myupchar
+      - practo
+      - lybrate
+      - mfine
+      - max healthcare
+      - max hospital
+      - fortis
+      - fortis hospital
+      - manipal hospital
+      - narayana health
+      - aster
+      - aiims
+      - lilavati
+      - kokilaben
+      - breach candy
+      - hinduja hospital
+      - jaslok
+      - wockhardt
+      - care hospital
+      - kims hospital
+      - rainbow hospital
+      - cloudnine
+      - motherhood
+      - medicover
+      - yashoda
+      - dr lal pathlabs
+      - srl diagnostics
+      - thyrocare
+    aliases:
+      - healthcare
+      - medical
+      - wellness
+    confidence_boost: 0.05
+
+# Bias mitigation settings
+bias_mitigation:
+  monitor_amount: true
+  monitor_region: true
+  enforce_balanced_accuracy: true
+
+# Confidence thresholds
+confidence_thresholds:
+  high: 0.85
+  medium: 0.70
+  low: 0.60
