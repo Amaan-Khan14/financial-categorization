@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "training_samples": 7000,
+  "validation_samples": 1500,
+  "test_samples": 1500,
+  "num_categories": 8,
+  "categories": [
+    "Food & Dining",
+    "Groceries",
+    "Fuel",
+    "Shopping",
+    "Utilities",
+    "Entertainment",
+    "Transportation",
+    "Health"
+  ],
+  "feature_dim": 4404,
+  "max_features": 5000,
+  "val_f1_macro": 0.9780307925348752,
+  "val_f1_micro": 0.978,
+  "val_accuracy": 0.978
+}

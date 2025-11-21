@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-11-13T18:25:53.083592",
+  "metrics": {
+    "macro_f1": 0.9614581879025292,
+    "micro_f1": 0.9613333333333334,
+    "weighted_f1": 0.9614423158606299,
+    "accuracy": 0.9613333333333334,
+    "balanced_accuracy": 0.9613223916258961
+  },
+  "per_category": [
+    {
+      "category": "Food & Dining",
+      "precision": 0.9884393063583815,
+      "recall": 0.9144385026737968,
+      "f1-score": 0.95,
+      "support": 187
+    },
+    {
+      "category": "Groceries",
+      "precision": 0.9675675675675676,
+      "recall": 0.9521276595744681,
+      "f1-score": 0.9597855227882037,
+      "support": 188
+    },
+    {
+      "category": "Fuel",
+      "precision": 0.9019607843137255,
+      "recall": 0.9787234042553191,
+      "f1-score": 0.9387755102040817,
+      "support": 188
+    },
+    {
+      "category": "Shopping",
+      "precision": 0.9675675675675676,
+      "recall": 0.9572192513368984,
+      "f1-score": 0.9623655913978495,
+      "support": 187
+    },
+    {
+      "category": "Utilities",
+      "precision": 0.9682539682539683,
+      "recall": 0.9786096256684492,
+      "f1-score": 0.973404255319149,
+      "support": 187
+    },
+    {
+      "category": "Entertainment",
+      "precision": 0.9891891891891892,
+      "recall": 0.9786096256684492,
+      "f1-score": 0.9838709677419355,
+      "support": 187
+    },
+    {
+      "category": "Transportation",
+      "precision": 0.9296482412060302,
+      "recall": 0.9840425531914894,
+      "f1-score": 0.9560723514211886,
+      "support": 188
+    },
+    {
+      "category": "Health",
+      "precision": 0.9888888888888889,
+      "recall": 0.9468085106382979,
+      "f1-score": 0.967391304347826,
+      "support": 188
+    }
+  ],
+  "bias_audit": {
+    "overall_bias_detected": true,
+    "recommendations": [
+      "Collect more training data for underperforming categories: Fuel",
+      "Consider applying calibration techniques (e.g., Platt scaling, isotonic regression)"
+    ]
+  },
+  "test_samples": 1500,
+  "num_categories": 8
+}
